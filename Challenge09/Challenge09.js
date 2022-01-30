@@ -158,7 +158,8 @@ const mostExpensive = (budget, mouseArray, keyBoardArray) => {
        });
    });
    return num;}
-   //Couldnt figuer out how to implment the closer number method in the sum of 2 elements of different arrays.
+   //Couldnt figuer out how to implment the nearest number method in the sum of 2 elements of different arrays.
+   //hence why i used the bud - 15 
 
     
 
