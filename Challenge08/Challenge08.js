@@ -60,7 +60,12 @@ const customerAndAge = (obj) => {
 // -------------------------------------------------------------------------------------------------------
 
 const getEntries = (obj) => {
-  // write your code here
+  let arr =[];
+  for (let [key, value] of Object.entries(obj)) {
+    arr.push(`${key}: ${value}`)
+  }
+  return arr;
+
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -101,7 +106,15 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-  // write your code here
+    
+  arr.forEach(element => {
+    
+    coursesName.push(element.course)
+    for( let i = 0 ; i<element.Students.length ; i ++){
+    studentsName.push(element.Students[i])
+  
+    } 
+}); 
 
   return { coursesName, studentsName };
 };
@@ -125,7 +138,27 @@ const getInfo = (arr) => {
 //  ------------------------------------------------------------------------------------------------------
 
 const getStudents = (arr) => {
-  // write your code here
+  let newArr =[]
+  
+  for(let i = 0 ; i<arr.length ; i++){
+      
+    var obj ={
+      Student : "",
+      course: "",
+      }
+    courses.forEach(course => {
+     
+      course.Students.forEach(info => {
+        if(info == arr[i]){
+         obj.Student = arr[i];
+          obj.course = course.course ;
+        
+        newArr.push(obj);
+        }
+      });
+    });
+  }
+  return newArr;
 
 };
 
